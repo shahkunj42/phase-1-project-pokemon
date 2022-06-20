@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <script defer src=./index.js></script>
     <title>Document</title>
 </head>
@@ -13,14 +14,21 @@
             <input type="text" name="pokemonName" id="pokemon">
             <input type="submit" name="pokemon" id="pokemon">
         </form>
+        <select name="attribute" id="attribute">
+            <option value="type">Types</option>
+            <option value="ability">Abilities</option>
+            <option value="stat">Stats</option>
+            <option value="move">Moves</option>
+          </select>
     </div>
-    <div id="pokemonStats">
+    <div id="pokeName">
         <h2 id="name">Pokemon Name</h2>
             <span id="sprites">
                 <img id="front_sprite" src="./defaultImg.jpeg" alt="front_sprite">
                 <img id="back_sprite" src="./defaultImg.jpeg" alt="back_sprite">
-
             </span>
+    </div>
+    <div id="pokemonStats">
         <h3>Pokemon Types</h3>
         <div id="types">
         </div>
@@ -28,7 +36,6 @@
             <ol id="abilityList">
 
             </ol>
-
         <h3>Pokemon Stats</h3>
             <table>
             <tr>

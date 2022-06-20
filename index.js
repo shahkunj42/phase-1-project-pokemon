@@ -45,8 +45,8 @@ form.addEventListener('submit', (e) => {
     });
     // Pokemon Stats
     pokemon.stats.forEach(statObj => {
-        console.log(statObj.base_stat)
-        console.log(statObj.stat.name)
+        // console.log(statObj.base_stat)
+        // console.log(statObj.stat.name)
         let statsData = document.createElement('td')
         statsData.textContent = statObj.base_stat
         pokeStats.append(statsData)
@@ -60,4 +60,22 @@ let resetBtn = document.querySelector('button')
 resetBtn.addEventListener('click', () => {
     let pokemonStats = document.querySelector('#pokemonStats')
     pokemonStats.remove()
+})
+
+let select = document.querySelector('select')
+select.addEventListener('change', (event) => {
+    console.log(event.target.value)
+    let value = event.target.value
+    if(value === 'Types'){
+        console.log('wonder woman')
+    }
+    else if(value === 'Abilities'){
+        console.log('BatMan')
+    }
+    else if(value === 'Stats'){
+        console.log('Aquaman')
+    }
+    else{
+        console.log('Green Arrow')
+    }
 })
