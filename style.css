@@ -5,6 +5,17 @@ body{
     font-family: Arial, Helvetica, sans-serif;
                                                 
 }
+
+ul#moves{
+    list-style-position: inside;
+    padding-left: inherit;
+}
+
+ol#abilityList{
+    list-style-position: inside;
+    padding-left: inherit;
+}
+
 table, tr, th {
     border: 1px solid;
     background-color: #3b4cca;
