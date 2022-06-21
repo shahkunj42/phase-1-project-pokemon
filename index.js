@@ -51,15 +51,26 @@ form.addEventListener('submit', (e) => {
         statsData.textContent = statObj.base_stat
         pokeStats.append(statsData)
     });
-    
+
      });
     form.reset()
     })
 
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 let resetBtn = document.querySelector('button')
 resetBtn.addEventListener('click', () => {
-    let pokemonStats = document.querySelector('#pokemonStats')
-    pokemonStats.remove()
+    pokeSpecies.textContent = 'Pokemon Name'
+    backSprite.src = './pokedex.png'
+    frontSprite.src = './ash.png'
+    removeAllChildNodes(pokeTypes)
+    removeAllChildNodes(abilityList)
+    removeAllChildNodes(pokeStats)
+    removeAllChildNodes(pokeMoves)
 })
 
 let select = document.querySelector('select')
