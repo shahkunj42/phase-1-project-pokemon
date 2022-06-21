@@ -30,10 +30,11 @@ table, tr, th {
 }
 
 h2 {
+    font-size: 45px;
     background-color: #cc0000;
-    padding: 20px;
+    padding: 30px;
     color: #ffde00;
-    text-shadow: 4px 4px #3b4cca;
+    text-shadow: 5px 5px #3b4cca;
     letter-spacing: 3px;
     font-family: 'Pokemon Solid', sans-serif;
 }
@@ -56,4 +57,11 @@ h2 {
 
 #pokemon-form {
     padding-bottom: 10px;
+}
+
+#front_sprite, #back_sprite {
+    width: 250px;
+    height: 250px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
