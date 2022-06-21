@@ -53,3 +53,7 @@ h2 {
     border-radius: 20px;
     text-shadow: none;
 }
+
+#pokemon-form {
+    padding-bottom: 10px;
+}
