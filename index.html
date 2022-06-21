@@ -16,6 +16,7 @@
             <input type="submit" name="pokemon" id="pokemon-button">
         </form>
         <select name="attribute" id="attribute">
+            <option value="allStats">All Stats</option>
             <option value="type">Types</option>
             <option value="ability">Abilities</option>
             <option value="stat">Stats</option>
@@ -31,15 +32,15 @@
             </span>
     </div>
     <div id="pokemonStats">
-        <h3>Pokemon Types</h3>
-        <div id="types">
+        <h3 id="pokeTypes" class="selectList">Pokemon Types</h3>
+        <div id="types" class="selectList">
         </div>
-        <h3 id="abilities"> Pokemon Abilities</h3>
-            <ol id="abilityList">
+        <h3 id="abilities" class="selectList"> Pokemon Abilities</h3>
+            <ol id="abilityList" class="selectList">
 
             </ol>
-        <h3>Pokemon Stats</h3>
-            <table>
+        <h3 id="pokeStats" class="selectList">Pokemon Stats</h3>
+            <table id="pokeTable">
             <tr>
                 <th>HP</th>
                 <th>Attack</th>
@@ -52,8 +53,8 @@
 
             </tr>
         </table>
-        <h3>Pokemon Moves</h3>
-            <ul id="moves">
+        <h3 id="pokeMoves" class="selectList">Pokemon Moves</h3>
+            <ul id="moves" class="selectList">
             </ul>
     </div>
 </body>

@@ -1,4 +1,5 @@
 let form = document.querySelector('form')
+let div = document.querySelector('#pokemonStats')
 let pokeSpecies = document.querySelector('#name')
 let pokeSprites = document.querySelector('#sprites')
 let pokeTypes = document.querySelector('#types')
@@ -9,14 +10,24 @@ let backSprite = document.querySelector('#back_sprite')
 let frontSprite = document.querySelector('#front_sprite')
 
 
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 form.addEventListener('submit', (e) => {
     e.preventDefault()
+    removeAllChildNodes(pokeTypes)
+    removeAllChildNodes(abilityList)
+    removeAllChildNodes(pokeStats)
+    removeAllChildNodes(pokeMoves)
     let pokemon = e.target.pokemonName.value.toLowerCase()
     pokeSpecies.textContent = e.target.pokemonName.value.toUpperCase()
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     .then(resp => resp.json())
     .then(pokemon => {
-    console.log(pokemon)
+    // console.log(pokemon)
     // Pokemon Sprite
     // console.log(pokemon.sprites)
     frontSprite.src = pokemon.sprites.front_default
@@ -38,7 +49,7 @@ form.addEventListener('submit', (e) => {
         })
     // Pokemon Abilities
     pokemon.abilities.forEach(abilityObj => {
-        console.log(abilityObj.ability.name)
+        // console.log(abilityObj.ability.name)
         let pokeAbility = document.createElement('li')
         pokeAbility.textContent = abilityObj.ability.name
         abilityList.appendChild(pokeAbility)
@@ -56,11 +67,6 @@ form.addEventListener('submit', (e) => {
     form.reset()
     })
 
-function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
-}
 
 let resetBtn = document.querySelector('button')
 resetBtn.addEventListener('click', () => {
@@ -73,20 +79,56 @@ resetBtn.addEventListener('click', () => {
     removeAllChildNodes(pokeMoves)
 })
 
+function hideAllAttributes(){
+    let div = document.querySelectorAll('.selectList'), i;
+    let table = document.querySelector('#pokeTable')
+    table.style.display = 'none'
+    for (i = 0; i < div.length; ++i) {
+    div[i].style.display = "none";
+    }
+}
+
+function showAllAttributes(){
+    let div = document.querySelectorAll('.selectList'), i;
+    let table = document.querySelector('#pokeTable')
+    table.style.display = ''
+    for (i = 0; i < div.length; ++i) {
+    div[i].style.display = "block";
+    }
+    
+}
+
 let select = document.querySelector('select')
 select.addEventListener('change', (event) => {
     console.log(event.target.value)
     let value = event.target.value
-    if(value === 'Types'){
-        console.log('wonder woman')
+    let abilities = document.querySelector('#abilities')
+    let type = document.querySelector('#pokeTypes')
+    let stats = document.querySelector('#pokeStats')
+    let table = document.querySelector('#pokeTable')
+    let moves = document.querySelector('#pokeMoves')
+    if(value === 'allStats'){
+        showAllAttributes()
     }
-    else if(value === 'Abilities'){
-        console.log('BatMan')
+    else if(value === 'type'){
+        hideAllAttributes()
+        pokeTypes.style.display = 'block'
+        type.style.display = 'block'   
     }
-    else if(value === 'Stats'){
-        console.log('Aquaman')
+    else if(value === 'ability'){
+        hideAllAttributes()
+        abilities.style.display = 'block'
+        abilityList.style.display = 'block'
     }
-    else{
-        console.log('Green Arrow')
+    else if(value === 'stat'){
+        hideAllAttributes()
+        stats.style.display = 'block'
+        table.style.display = ''
+    }
+    else if(value === 'move'){
+        hideAllAttributes()
+        moves.style.display = 'block'
+        pokeMoves.style.display = 'block'
     }
 })
+
