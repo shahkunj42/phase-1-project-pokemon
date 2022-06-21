@@ -63,7 +63,8 @@ form.addEventListener('submit', (e) => {
         pokeStats.append(statsData)
     });
 
-     });
+     })
+     .catch(e => alert(e))
     form.reset()
     })
 
