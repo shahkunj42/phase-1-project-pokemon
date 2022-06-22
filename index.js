@@ -71,7 +71,7 @@ form.addEventListener('submit', (e) => {
 
 let resetBtn = document.querySelector('button')
 resetBtn.addEventListener('click', () => {
-    pokeSpecies.textContent = 'Pokemon Name'
+    pokeSpecies.textContent = 'Pokédex'
     backSprite.src = './pokedex.png'
     frontSprite.src = './ash.png'
     removeAllChildNodes(pokeTypes)
@@ -136,7 +136,7 @@ select.addEventListener('change', (event) => {
 let randomButton = document.querySelector("#random-button")
 
 randomButton.addEventListener("click", () => {
-    fetch(`https://pokeapi.co/api/v2/pokemon`)
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=898`)
     .then(resp => resp.json())
     .then(pokemon => {
         let pokemonObj = pokemon.results
@@ -155,4 +155,3 @@ randomButton.addEventListener("click", () => {
     });
 });
 
-       
