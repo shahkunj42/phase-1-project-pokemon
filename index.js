@@ -27,7 +27,7 @@ form.addEventListener('submit', (e) => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     .then(resp => resp.json())
     .then(pokemon => {
-    // console.log(pokemon)
+    console.log(pokemon)
     // Pokemon Sprite
     // console.log(pokemon.sprites)
     frontSprite.src = pokemon.sprites.front_default
@@ -84,8 +84,8 @@ function hideAllAttributes(){
     let div = document.querySelectorAll('.selectList'), i;
     let table = document.querySelector('#pokeTable')
     table.style.display = 'none'
-    for (i = 0; i < div.length; ++i) {
-    div[i].style.display = "none";
+    for (i = 0; i < div.length; i++) {
+        div[i].style.display = "none";
     }
 }
 
@@ -93,8 +93,8 @@ function showAllAttributes(){
     let div = document.querySelectorAll('.selectList'), i;
     let table = document.querySelector('#pokeTable')
     table.style.display = ''
-    for (i = 0; i < div.length; ++i) {
-    div[i].style.display = "block";
+    for (i = 0; i < div.length; i++) {
+        div[i].style.display = "block";
     }
     
 }
@@ -133,3 +133,21 @@ select.addEventListener('change', (event) => {
     }
 })
 
+let randomButton = document.querySelector("#random-button")
+
+randomButton.addEventListener("click", () => {
+        fetch(`https://pokeapi.co/api/v2/pokemon`)
+            .then(resp => resp.json())
+            .then(pokemon => {
+        let pokemonObj = pokemon.results
+        let randomPokemon = pokemonObj[Math.floor(Math.random()*pokemonObj.length)];
+            //console.log(randomPokemon);
+        let randomPokemonName = document.querySelector("#random-pokemon-name")
+        randomPokemonName.innerText = randomPokemon.name;
+            //console.log(randomPokemon.name); 
+
+    
+        })
+        });
+
+       
