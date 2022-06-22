@@ -64,7 +64,7 @@ h4 {
     border: 1px solid #eee;
     border-radius: 20px;
     text-shadow: none;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 #reset {
@@ -86,13 +86,20 @@ h4 {
     padding-right: 10px;
 }
 
-#random-pokemon {
-  filter: blur(4px);
+#background-img {
+    background-image: url(/whos-that-pokemon.png);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-right: 200px;
 }
 
 #random-pokemon-name {
     font-size: 25px;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
 }
 
 #random-pokemon-name::first-letter {

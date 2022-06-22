@@ -136,23 +136,23 @@ select.addEventListener('change', (event) => {
 let randomButton = document.querySelector("#random-button")
 
 randomButton.addEventListener("click", () => {
-        fetch(`https://pokeapi.co/api/v2/pokemon`)
-            .then(resp => resp.json())
-            .then(pokemon => {
+    fetch(`https://pokeapi.co/api/v2/pokemon`)
+    .then(resp => resp.json())
+    .then(pokemon => {
         let pokemonObj = pokemon.results
         let randomPokemon = pokemonObj[Math.floor(Math.random()*pokemonObj.length)];
         let randomPokemonName = document.querySelector("#random-pokemon-name")
         randomPokemonName.innerText = randomPokemon.name;
             
         fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemon.name}`)
-                .then(response => response.json())
-                .then(randomPokemon => {
-                    let randomFrontSprite = document.querySelector("#random-front-sprite");
-                    let randomBackSprite = document.querySelector("#random-back-sprite");
-                    randomFrontSprite.src = randomPokemon.sprites.front_default;
-                    randomBackSprite.src = randomPokemon.sprites.back_default;
-                });
+        .then(response => response.json())
+        .then(randomPokemon => {
+            let randomFrontSprite = document.querySelector("#random-front-sprite");
+            let randomBackSprite = document.querySelector("#random-back-sprite");
+            randomFrontSprite.src = randomPokemon.sprites.front_default;
+            randomBackSprite.src = randomPokemon.sprites.back_default;
         });
-        });
+    });
+});
 
        
