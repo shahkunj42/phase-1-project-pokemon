@@ -9,6 +9,7 @@ body{
 ul#moves{
     list-style-position: inside;
     padding-left: inherit;
+    columns: 3;
 }
 
 ol#abilityList{
