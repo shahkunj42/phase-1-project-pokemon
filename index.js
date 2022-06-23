@@ -148,9 +148,7 @@ randomButton.addEventListener("click", () => {
         .then(response => response.json())
         .then(randomPokemon => {
             let randomFrontSprite = document.querySelector("#random-front-sprite");
-            let randomBackSprite = document.querySelector("#random-back-sprite");
             randomFrontSprite.src = randomPokemon.sprites.front_default;
-            randomBackSprite.src = randomPokemon.sprites.back_default;
         });
     });
 });

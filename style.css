@@ -58,34 +58,32 @@ h4 {
     }
 
 #random-button {
+    display: block;
+    margin: 0 auto;
     font-size: 18px;
-    background: #3b4cca;
+    background: #3B4CCA;
     color: white;
     border: 1px solid #eee;
     border-radius: 20px;
     text-shadow: none;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
-
 #reset {
-    background: #3b4cca;
+    background: #3B4CCA;
     color: white;
     border: 1px solid #eee;
     border-radius: 20px;
     text-shadow: none;
 }
-
 #pokemon-form {
     padding-bottom: 10px;
 }
-
 #front_sprite, #back_sprite {
     width: 250px;
     height: 250px;
     padding-left: 10px;
     padding-right: 10px;
 }
-
 #background-img {
     background-image: url(./whos-that-pokemon.png);
     background-size: 500px;
@@ -96,13 +94,14 @@ h4 {
     padding-bottom: 30px;
     padding-right: 200px;
 }
-
 #random-pokemon-name {
-    font-size: 25px;
-    padding-bottom: 10px;
+    font-size: 15px;
+    padding-top: 30px;
 }
-
 #random-pokemon-name::first-letter {
     text-transform: uppercase;
 }
-
+#random-front-sprite {
+    width: 150px;
+    height: 150px;
+}
